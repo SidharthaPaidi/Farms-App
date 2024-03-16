@@ -27,7 +27,7 @@ app.use(methodOverride('_method'))
 
 // FARM ROUTES
 
-app.get('/farms', async (req, res) => {
+app.get('/', async (req, res) => {
     const farms = await Farm.find({});
     res.render('farms/index', { farms })
 })
