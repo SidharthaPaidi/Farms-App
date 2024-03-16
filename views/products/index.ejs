@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products</title>
+</head>
+
+<body>
+    <h1><%= category%> Products!</h1>
+    <ul>
+        <% for(let product of products) { %>
+        <li><a href="/products/<%=product._id%>"><%= product.name %></a> </li>
+        <% }%>
+    </ul>
+    <%if(category !== 'All') {%>
+    <a href="/products">All Products</a>
+    <% } %>
+    <% if(farm && !farm._id){ %>
+        <a href="/farms/<%=farm._id%>/products/new">Add Product</a>
+    <%}%>
+    <a href="/farms">All Farms</a>
+    <a href="/farms">Home</a>
+</body>
+
+</html>
